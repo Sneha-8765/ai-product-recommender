@@ -29,20 +29,39 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-100 to-slate-200 p-6">
-      
-      <div className="max-w-6xl mx-auto">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-slate-100 to-indigo-100 p-6">
 
-        {/* Header */}
-        <div className="text-center mb-10">
-  <h1 className="text-5xl md:text-6xl font-extrabold text-blue-700 mb-4">
-    AI Product Recommender
-  </h1>
+  <div className="max-w-6xl mx-auto">
 
-  <p className="text-slate-600 text-xl">
-    Find products using AI-powered recommendations
-  </p>
-</div>
+    {/* Header */}
+    <div className="text-center mb-12 pt-6">
+
+      <h1 className="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-blue-700 via-indigo-700 to-purple-700 bg-clip-text text-transparent mb-4 drop-shadow-sm">
+  AI Product Recommender
+</h1>
+
+      <p className="text-slate-700 text-lg md:text-xl font-medium">
+        Find products using AI-powered recommendations
+      </p>
+
+      {/* Feature Pills */}
+      <div className="flex justify-center gap-4 mt-6 flex-wrap">
+
+        <div className="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-md text-sm font-medium text-slate-700 hover:scale-105 transition">
+          ⚡ Smart Recommendations
+        </div>
+
+        <div className="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-md text-sm font-medium text-slate-700 hover:scale-105 transition">
+          🎯 Budget Friendly
+        </div>
+
+        <div className="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-md text-sm font-medium text-slate-700 hover:scale-105 transition">
+          🤖 AI Inspired Search
+        </div>
+
+      </div>
+
+    </div>
 
         {/* Search Section */}
         <div className="bg-white rounded-3xl shadow-lg p-6 mb-10">
