@@ -35,14 +35,14 @@ function App() {
 
         {/* Header */}
         <div className="text-center mb-10">
-          <h1 className="text-5xl font-bold text-slate-800 mb-3">
-            AI Product Recommender
-          </h1>
+  <h1 className="text-5xl md:text-6xl font-extrabold text-blue-700 mb-4">
+    AI Product Recommender
+  </h1>
 
-          <p className="text-slate-600 text-lg">
-            Find products using AI-powered recommendations
-          </p>
-        </div>
+  <p className="text-slate-600 text-xl">
+    Find products using AI-powered recommendations
+  </p>
+</div>
 
         {/* Search Section */}
         <div className="bg-white rounded-3xl shadow-lg p-6 mb-10">
