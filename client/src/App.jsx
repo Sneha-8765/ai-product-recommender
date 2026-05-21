@@ -12,7 +12,7 @@ function App() {
       setLoading(true);
 
       const response = await axios.post(
-        "http://localhost:5000/recommend",
+        "https://ai-product-recommender-6d2b.onrender.com/recommend",
         {
           query,
           products,

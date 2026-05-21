@@ -3,7 +3,12 @@ const cors = require("cors");
 
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "*",
+  })
+);
+
 app.use(express.json());
 
 app.post("/recommend", async (req, res) => {
@@ -14,7 +19,7 @@ app.post("/recommend", async (req, res) => {
 
     let filteredProducts = [...products];
 
-    // Detect category
+    // Category filter
     if (lowerQuery.includes("phone")) {
       filteredProducts = filteredProducts.filter(
         (p) => p.category === "phone"
@@ -27,7 +32,7 @@ app.post("/recommend", async (req, res) => {
       );
     }
 
-    // Detect budget
+    // Budget filter
     const budgetMatch = lowerQuery.match(/\d+/);
 
     if (budgetMatch) {
@@ -38,8 +43,14 @@ app.post("/recommend", async (req, res) => {
       );
     }
 
+    // Add recommendation reason
+    const recommendations = filteredProducts.map((p) => ({
+      ...p,
+      reason: `Matches your search preference`,
+    }));
+
     res.json({
-      recommendations: filteredProducts,
+      recommendations,
     });
 
   } catch (error) {
@@ -49,6 +60,10 @@ app.post("/recommend", async (req, res) => {
       error: "Server Error",
     });
   }
+});
+
+app.get("/", (req, res) => {
+  res.send("Backend is running");
 });
 
 app.listen(5000, () => {
